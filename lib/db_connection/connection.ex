@@ -30,7 +30,7 @@ defmodule DBConnection.Connection do
 
   @doc false
   def checkout(pool, opts) do
-    pool_timeout = opts[:pool_timeout] || @pool_timeout
+    pool_timeout = :infinity # opts[:pool_timeout] || @pool_timeout
     queue?        = Keyword.get(opts, :queue, true)
     timeout       = opts[:timeout] || @timeout
 
